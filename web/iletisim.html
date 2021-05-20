@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>İletişim - HOŞGELDİNİZ</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="js/control.js"></script>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/Javascript">
+        function control(){
+          var isim = document.getElementById("isim").value;
+          var soyisim = document.getElementById("soyisim").value;
+          var email = document.getElementById("email");
+          var cinsiyetler = document.getElementsByName("cinsiyet");
+
+          if (isim  == "")
+          {
+            alert("İsim girmelisiniz!");
+            return false;
+          }
+          if (soyisim == "")
+          {
+            alert("Soyisim girmelisiniz!");
+            return false;
+          }
+          if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)))
+          {
+            alert("Geçerli bir E-Mail adresi girmelisiniz!");
+            return false;
+          }
+          if ((cinsiyetler[0].checked == false) && (cinsiyetler[1].checked == false))
+          {
+            alert("Cinsiyet seçmelisiniz!");
+            return false;
+          }
+        }
+        </script>
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand mb-1" href="index.html">HOŞGELDİNİZ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive" style>
+          <ul class="navbar-nav mr-auto">
+           
+            
+          </ul>
+          <ul class="navbar-nav">
+            <li class="form-inline my-2 my-lg-0">
+
+              <a class="nav-link" href="login.html">Kullanıcı Girişi</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <header class="login_background">
+        <main class="text-center container d-flex h-100 align-items-center">
+          <div class="bg-dark mt-5 mb-0 col-4 card mx-auto">
+            <form name="iletisimform" action="iletisim.php" method="POST" onsubmit="return control();"><br>
+              <input class="form-control" type="text" id="isim" name="isim" placeholder="İsim" autofocus><br>
+              <input class="form-control" type="text" id="soyisim" name="soyisim" placeholder="Soyisim"><br>
+              <input class="form-control" type="text" id="email" name="email" placeholder="E-Mail"><br>
+              <label class="iletisim_yazi" for="cinsiyet">Cinsiyetiniz: </label>
+              <input type="radio" id="erkek" name="cinsiyet" value="Erkek">
+              <label class="iletisim_yazi" for="male">Erkek</label>
+              <input type="radio" id="kadin" name="cinsiyet" value="Kadın">
+              <label class="iletisim_yazi" for="female">Kadın</label><br>
+              <label class="iletisim_yazi" for="sehir">Yaşadığınız Şehir; </label>
+              <select id="sehir" name="sehir">
+                <option value="İstanbul" selected>İstanbul</option>
+                <option value="Ankara">Ankara</option>
+                <option value="İzmir">İzmir</option>
+                <option value="Bursa">Bursa</option>
+                <option value="Bolu">Bolu</option>
+                <option value="Adana">Adana</option>
+                <option value="Konya">Konya</option>
+                <option value="Şanlıurfa">Şanlıurfa</option>
+                <option value="Gaziantep">Gaziantep</option>
+                <option value="Kocaeli">Kocaeli</option>
+                <option value="Mersin">Mersin</option>
+                <option value="Diyarbakır">Diyarbakır</option>
+                <option value="Hatay">Hatay</option>
+                <option value="Manisa">Manisa</option>
+                <option value="Kayseri">Kayseri</option>
+                <option value="Samsun">Samsun</option>
+                <option value="Balıkesir">Balıkesir</option>
+                <option value="Kahramanmaraş">Kahramanmaraş</option>
+                <option value="Van">Van</option>
+                <option value="Aydın">Aydın</option>
+                <option value="Tekirdağ">Tekirdağ</option>
+                <option value="Denizli">Denizli</option>
+                <option value="Sakarya">Sakarya</option>
+              </select><br>
+              <label class="iletisim_yazi">Bildiğiniz Programlama Dilleri; </label><br>
+              <label class="iletisim_yazi" for="pdil1">C#</label>
+              <input type="checkbox" name="pdil1" value="C#">
+              <label class="iletisim_yazi" for="pdil2">Java</label>
+			        <input type="checkbox" name="pdil2" value="Java">
+              <label class="iletisim_yazi" for="pdil3">Javascript</label>
+              <input type="checkbox" name="pdil3" value="Javascript">
+              <label class="iletisim_yazi" for="pdil4">Python</label>
+              <input type="checkbox" name="pdil4" value="Python"><br><br>
+              <input class="btn bg-light mr-1" type="reset" value="Sıfırla">
+              <input class="btn bg-light" type="submit" value="Gönder">
+            </form><br>
+          </div>
+        </main>
+      </header>
+  </body>
+</html>

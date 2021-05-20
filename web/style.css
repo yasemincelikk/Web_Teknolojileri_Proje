@@ -1,0 +1,14 @@
+.login_background{
+ 
+    background-size:cover;
+    height: 100%;
+    background-position: center;
+}
+
+.login_yazi{
+    color: black;
+}
+
+.iletisim_yazi{
+    color:rgb(255, 47, 47);
+}
