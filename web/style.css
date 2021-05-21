@@ -12,3 +12,20 @@
 .iletisim_yazi{
     color:rgb(255, 47, 47);
 }
+
+body {
+    background-image: url("../Pictures/jesse-bowser-c0I4ahyGIkA-unsplash.jpg");
+}
+.navbar {
+    border-bottom: 3px #ffc107 solid;
+} 
+.my-table{
+    background-color: rgba(0, 0,0, 0.0) !important;
+    align-content: center;
+
+
+}
+.nav-link:hover{
+    color: whitesmoke!important;
+
+}
