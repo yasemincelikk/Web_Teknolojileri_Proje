@@ -1,113 +1,144 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>İletişim - HOŞGELDİNİZ</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <script src="js/control.js"></script>
-        <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script type="text/Javascript">
-        function control(){
-          var isim = document.getElementById("isim").value;
-          var soyisim = document.getElementById("soyisim").value;
-          var email = document.getElementById("email");
-          var cinsiyetler = document.getElementsByName("cinsiyet");
+<html lang="en">
 
-          if (isim  == "")
-          {
-            alert("İsim girmelisiniz!");
-            return false;
-          }
-          if (soyisim == "")
-          {
-            alert("Soyisim girmelisiniz!");
-            return false;
-          }
-          if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)))
-          {
-            alert("Geçerli bir E-Mail adresi girmelisiniz!");
-            return false;
-          }
-          if ((cinsiyetler[0].checked == false) && (cinsiyetler[1].checked == false))
-          {
-            alert("Cinsiyet seçmelisiniz!");
-            return false;
-          }
-        }
-        </script>
-    </head>
-    <body>
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand mb-1" href="index.html">HOŞGELDİNİZ</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarResponsive" style>
-          <ul class="navbar-nav mr-auto">
-           
-            
-          </ul>
-          <ul class="navbar-nav">
-            <li class="form-inline my-2 my-lg-0">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+    <script src="js/iletisim.js"></script>
+ 
+</head>
 
-              <a class="nav-link" href="login.html">Kullanıcı Girişi</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <header class="login_background">
-        <main class="text-center container d-flex h-100 align-items-center">
-          <div class="bg-dark mt-5 mb-0 col-4 card mx-auto">
-            <form name="iletisimform" action="iletisim.php" method="POST" onsubmit="return control();"><br>
-              <input class="form-control" type="text" id="isim" name="isim" placeholder="İsim" autofocus><br>
-              <input class="form-control" type="text" id="soyisim" name="soyisim" placeholder="Soyisim"><br>
-              <input class="form-control" type="text" id="email" name="email" placeholder="E-Mail"><br>
-              <label class="iletisim_yazi" for="cinsiyet">Cinsiyetiniz: </label>
-              <input type="radio" id="erkek" name="cinsiyet" value="Erkek">
-              <label class="iletisim_yazi" for="male">Erkek</label>
-              <input type="radio" id="kadin" name="cinsiyet" value="Kadın">
-              <label class="iletisim_yazi" for="female">Kadın</label><br>
-              <label class="iletisim_yazi" for="sehir">Yaşadığınız Şehir; </label>
-              <select id="sehir" name="sehir">
-                <option value="İstanbul" selected>İstanbul</option>
-                <option value="Ankara">Ankara</option>
-                <option value="İzmir">İzmir</option>
-                <option value="Bursa">Bursa</option>
-                <option value="Bolu">Bolu</option>
-                <option value="Adana">Adana</option>
-                <option value="Konya">Konya</option>
-                <option value="Şanlıurfa">Şanlıurfa</option>
-                <option value="Gaziantep">Gaziantep</option>
-                <option value="Kocaeli">Kocaeli</option>
-                <option value="Mersin">Mersin</option>
-                <option value="Diyarbakır">Diyarbakır</option>
-                <option value="Hatay">Hatay</option>
-                <option value="Manisa">Manisa</option>
-                <option value="Kayseri">Kayseri</option>
-                <option value="Samsun">Samsun</option>
-                <option value="Balıkesir">Balıkesir</option>
-                <option value="Kahramanmaraş">Kahramanmaraş</option>
-                <option value="Van">Van</option>
-                <option value="Aydın">Aydın</option>
-                <option value="Tekirdağ">Tekirdağ</option>
-                <option value="Denizli">Denizli</option>
-                <option value="Sakarya">Sakarya</option>
-              </select><br>
-              <label class="iletisim_yazi">Bildiğiniz Programlama Dilleri; </label><br>
-              <label class="iletisim_yazi" for="pdil1">C#</label>
-              <input type="checkbox" name="pdil1" value="C#">
-              <label class="iletisim_yazi" for="pdil2">Java</label>
-			        <input type="checkbox" name="pdil2" value="Java">
-              <label class="iletisim_yazi" for="pdil3">Javascript</label>
-              <input type="checkbox" name="pdil3" value="Javascript">
-              <label class="iletisim_yazi" for="pdil4">Python</label>
-              <input type="checkbox" name="pdil4" value="Python"><br><br>
-              <input class="btn bg-light mr-1" type="reset" value="Sıfırla">
-              <input class="btn bg-light" type="submit" value="Gönder">
-            </form><br>
+<body>
+  <div class="container-fluid backgroundimg">
+    <div class="row">
+      <div class="col-12">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white  static-top" style="background-color:#4674a1;">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">
+              
+              </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+              <a class="nav-link" href="index.html">HOŞGELDİNİZ
+                  <span class="sr-only"></span>
+                </a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="ozgecmis.html">ÖZGEÇMİŞ</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="sehrim.html">ŞEHRİM</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="mirasımız.html">MİRASIMIZ</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="ilgialanlarım.html">İLGİ ALANLARIM</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="iletisim.html">İLETİŞİM</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="login.html">LOGİN(GİRİŞ)</a>
+              </li>
+            </ul>
+            </div>
           </div>
-        </main>
-      </header>
-  </body>
+          </nav>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <section class="mb-4">
+          <form action="php/iletişim.php" method="POST" id="contact-form" name="contact-form" onsubmit="return iletisim()">
+            <h2 class="h1-responsive font-weight-bold text-center my-4">  İletişim İçin </h2>
+          
+            <div class="row">
+              <div class="col-md-9 mb-md-0 mb-5">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="md-form mb-0">
+                      <input type="text" id="isim" name="isim" class="form-control">
+                      <label>Ad</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="md-form mb-0">
+                      <input type="text" id="email" name="email" class="form-control">
+                      <label>E-posta</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="md-form mb-0">
+                      <input type="text" id="konu" name="konu" class="form-control">
+                      <label>Konu</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="md-form">
+                      <textarea type="text" id="mesaj" name="mesaj" rows="2"
+                        class="form-control md-textarea"></textarea>
+                      <label>Mesajınız</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center text-md-left">
+                  <button type="submit" class="btn btn-success">Gönder</button>
+                  <button onclick="return temizle()" type="button" class="btn btn-success">Temizle</button>
+                </div>
+                <div class="status"></div>
+              </div>
+              <div class="col-md-3 text-center">
+                <div class="row">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Cinsiyet</span>
+                    </div>
+                    <div class="input-group-append">
+                      <div class="input-group-text">
+                        <input type="radio" name="cinsiyet" value="erkek">Erkek
+                      </div>
+                      <div class="input-group-text">
+                        <input type="radio" name="cinsiyet" value="kadın">Kadın
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+               
+            </div>
+      </div>
+      </form>
+      </section>
+    </div>
+    <div class="col-3">
+    </div>
+  </div>
+ 
+</body>
+
 </html>
